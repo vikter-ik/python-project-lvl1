@@ -17,7 +17,7 @@ def gen_calc_game():
     f, str_f = random.choice([
         (lambda x, y: x + y, '+'),
         (lambda x, y: x - y, '-'),
-        (lambda x, y: x + y, '*')]
+        (lambda x, y: x * y, '*')]
     )
 
     question = "{} {} {}".format(a, str_f, b)
