@@ -39,6 +39,21 @@ def gen_gcd_game():
     return (question, answer)
 
 
+def gen_progression_game():
+    n = random.randint(5, 15)
+    a_0 = random.randint(1, 25)
+
+    step = random.randint(1, 25)
+    sequence = [str(a_0 + i * step) for i in range(n)]
+
+    position = random.randint(0, n - 1)
+    answer = str(sequence[position])
+    sequence[position] = '..'
+
+    question = ' '.join(sequence)
+    return (question, answer)
+
+
 def play_game(gen_game, start_statement, name):
     print(start_statement)
     count = 0
