@@ -25,6 +25,20 @@ def gen_calc_game():
     return (question, answer)
 
 
+def gen_gcd_game():
+    a, b = random.randint(1, 100), random.randint(1, 100)
+
+    if a < b:
+        a, b = b, a
+    question = "{} {}".format(a, b)
+
+    while a % b > 0:
+        a, b = b, a % b
+
+    answer = str(b)
+    return (question, answer)
+
+
 def play_game(gen_game, start_statement, name):
     print(start_statement)
     count = 0
