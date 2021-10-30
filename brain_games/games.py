@@ -54,6 +54,27 @@ def gen_progression_game():
     return (question, answer)
 
 
+def gen_prime_game():
+    primes = [2, ]
+
+    non_primes = [1, ]
+    for i in range(3, 200):
+
+        if all(i % prime > 0 for prime in primes):
+            primes.append(i)
+
+        else:
+            non_primes.append(i)
+
+    answer = "yes" if random.randint(0, 1) == 0 else "no"
+    if answer == "yes":
+        question = random.choice(primes)
+
+    else:
+        question = random.choice(non_primes)
+    return (question, answer)
+
+
 def play_game(gen_game, start_statement, name):
     print(start_statement)
     count = 0
